@@ -1,0 +1,7 @@
+public class ContactAndLeadSearch {
+    public static List<List<SObject>> searchContactsAndLeads(String matchPattern) {
+        return [FIND :matchPattern
+                IN NAME FIELDS RETURNING Contact(FirstName,LastName),Lead(Name)];
+    }
+        
+}
